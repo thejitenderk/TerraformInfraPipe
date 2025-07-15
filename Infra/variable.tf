@@ -3,7 +3,7 @@ variable "rg_name" {
 }
 
 variable "vnet_name" {
-description = "value"
+  description = "values for virtual network names, resource group names, and address spaces"
 }
 
 variable "subnet_name" {
