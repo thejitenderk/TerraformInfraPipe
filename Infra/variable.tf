@@ -1,12 +1,14 @@
 variable "rg_name" {
- 
+ description = "values for resource group names and locations"
 }
 
 variable "vnet_name" {
-
+description = "value"
 }
 
-variable "subnet_name" {}
+variable "subnet_name" {
+    description = "values for subnet names, locations, and address prefixes"
+}
 
 variable "pip" {}
 
