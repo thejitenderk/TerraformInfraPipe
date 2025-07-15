@@ -6,7 +6,9 @@ variable "vnet_name" {
   description = "values for virtual network names, resource group names, and address spaces"
 }
 
-variable "subnet_name" {}
+variable "subnet_name" {
+    description = "values for subnet names, locations, and address prefixes"
+}
 
 variable "pip" {}
 
