@@ -10,7 +10,9 @@ variable "subnet_name" {
     description = "values for subnet names, locations, and address prefixes"
 }
 
-variable "pip" {}
+variable "pip" {
+    description = "hellpppp"
+}
 
 variable "lvmms" {}
 
