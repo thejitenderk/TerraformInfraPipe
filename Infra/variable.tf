@@ -1,5 +1,5 @@
 variable "rg_name" {
-
+ description = "values for resource group names and locations"
 }
 
 variable "vnet_name" {
