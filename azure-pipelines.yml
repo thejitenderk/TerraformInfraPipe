@@ -7,6 +7,22 @@ trigger: none
 
 pool: terraform
 
+pr:
+- main
+- features/**
+
+variables:
+  sourcepath: '$(System.DefaultWorkingDirectory)\Infra'
+  
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+  - task: TerraformTask@5
+    inputs:
+      provider: 'azurerm'
+      command: 'init'
+      workingDirectory: '$(System.DefaultWorkingDirectory)\Infra'
+      backendAzureRmUseEntraIdForAuthentication: false
+      backendServiceArm: 'jkpipe'
+      backendAzureRmResourceGroupName: 'terraformstorage'
+      backendAzureRmStorageAccountName: 'terraformstoragejk'
+      backendAzureRmContainerName: 'tfstate'
+      backendAzureRmKey: 'dev.tfstate'
