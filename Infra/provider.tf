@@ -6,6 +6,5 @@ terraform {
     }
   }
   backend "azurerm" {
-
   }
 }
