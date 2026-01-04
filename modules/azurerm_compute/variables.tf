@@ -1,6 +1,6 @@
 variable "lvms" {
   type = map(object({
-    name                = string
+    name                = optional(string)
     resource_group_name = string
     location            = string
     size                = string

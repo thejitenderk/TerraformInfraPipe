@@ -6,6 +6,7 @@ module "rgs" {
 module "networks" {
   source = "../../modules/azurerm_network"
   virtual_networks = { for k, v in var.virtual_networks : k => merge(v, {
+    name                = v.k
     resource_group_name = module.rgs.rg_names[v.resource_group_name]
     location            = module.rgs.rg_locations[v.resource_group_name]
   }) }
@@ -14,7 +15,8 @@ module "networks" {
 module "computes" {
   source     = "../../modules/azurerm_compute"
   depends_on = [module.networks, module.rgs]
-  lvms =  { for k, v in var.lvms : k => merge(v, {
+  lvms = { for k, v in var.lvms : k => merge(v, {
+    name                = v.k
     resource_group_name = module.rgs.rg_names[v.resource_group_name]
     location            = module.rgs.rg_locations[v.resource_group_name]
     size                = coalesce(v.size, "Standard_B2s")

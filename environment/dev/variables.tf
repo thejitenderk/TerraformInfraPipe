@@ -8,7 +8,7 @@ variable "resource_groups" {
 
 variable "virtual_networks" {
   type = map(object({
-    name                = string
+    name                = optional(string)
     address_space       = list(string)
     location            = optional(string)
     resource_group_name = optional(string)
@@ -39,7 +39,7 @@ variable "virtual_networks" {
 
 variable "lvms" {
   type = map(object({
-    name                = string
+    name                = optional(string)
     resource_group_name = optional(string)
     location            = optional(string)
     size                = optional(string)

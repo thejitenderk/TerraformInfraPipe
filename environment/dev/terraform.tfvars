@@ -6,8 +6,7 @@ resource_groups = {
 }
 
 virtual_networks = {
-  "net1" = {
-    name                = "dev-vnet1"
+  "dev-vnet1" = {
     address_space       = ["10.0.0.0/16"]
     resource_group_name = "rg1"
     subnets = {
@@ -22,8 +21,7 @@ virtual_networks = {
 }
 
 lvms = {
-  "vm1" = {
-    name                = "devvm1"
+  "devvm1" = {
     admin_username      = ""
     admin_password      = ""
     nic_name            = "dev-vm1-nic"
@@ -31,8 +29,7 @@ lvms = {
     vnet_name           = "dev-vnet1"
     resource_group_name = "rg1"
   }
-  vm2 = {
-    name                = "devvm2"
+  "devvm2" = {
     admin_username      = ""
     admin_password      = ""
     nic_name            = "dev-vm2-nic"

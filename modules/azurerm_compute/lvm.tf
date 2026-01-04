@@ -21,7 +21,7 @@ data "azurerm_subnet" "data_subnet" {
 
 resource "azurerm_linux_virtual_machine" "linux_vm" {
   for_each                        = var.lvms
-  name                            = each.value.name
+  name                            = each.key
   resource_group_name             = each.value.resource_group_name
   location                        = each.value.location
   size                            = each.value.size
